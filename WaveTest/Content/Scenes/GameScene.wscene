@@ -1,5 +1,5 @@
 ﻿<Scene xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="WaveEngine.Framework.Models">
-  <Id>ca1e2372-d6d6-46d2-b894-6ae25ffff02f</Id>
+  <Id>560819a5-110e-4d9c-a2a0-9526b3358f4a</Id>
   <Entities xmlns:d2p1="WaveEngine.Framework">
     <d2p1:Entity>
       <d2p1:IsStatic>false</d2p1:IsStatic>
@@ -10,14 +10,14 @@
         <d2p1:Component xmlns:d5p1="WaveEngine.Framework.Graphics" i:type="d5p1:Transform3D">
           <d5p1:LocalOrientation xmlns:d6p1="WaveEngine.Common.Math">
             <d6p1:W>0.923879564</d6p1:W>
-            <d6p1:X>-0.382683367</d6p1:X>
+            <d6p1:X>-0.382683426</d6p1:X>
             <d6p1:Y>0</d6p1:Y>
             <d6p1:Z>0</d6p1:Z>
           </d5p1:LocalOrientation>
           <d5p1:LocalPosition xmlns:d6p1="WaveEngine.Common.Math">
-            <d6p1:X>0</d6p1:X>
-            <d6p1:Y>2</d6p1:Y>
-            <d6p1:Z>2</d6p1:Z>
+            <d6p1:X>1.47505748</d6p1:X>
+            <d6p1:Y>2.182757</d6p1:Y>
+            <d6p1:Z>2.313838</d6p1:Z>
           </d5p1:LocalPosition>
           <d5p1:LocalScale xmlns:d6p1="WaveEngine.Common.Math">
             <d6p1:X>1</d6p1:X>
@@ -28,13 +28,13 @@
         <d2p1:Component xmlns:d5p1="WaveEngine.Framework.Graphics" i:type="d5p1:Camera3D">
           <d5p1:BackgroundColor xmlns:d6p1="WaveEngine.Common.Graphics">
             <d6p1:A>255</d6p1:A>
-            <d6p1:B>237</d6p1:B>
-            <d6p1:G>149</d6p1:G>
-            <d6p1:R>100</d6p1:R>
+            <d6p1:B>0</d6p1:B>
+            <d6p1:G>0</d6p1:G>
+            <d6p1:R>0</d6p1:R>
           </d5p1:BackgroundColor>
           <d5p1:CameraOrder>0</d5p1:CameraOrder>
           <d5p1:ClearFlags>All</d5p1:ClearFlags>
-          <d5p1:FarPlane>10000</d5p1:FarPlane>
+          <d5p1:FarPlane>1000</d5p1:FarPlane>
           <d5p1:FieldOfView>0.7853982</d5p1:FieldOfView>
           <d5p1:IsActive>true</d5p1:IsActive>
           <d5p1:LayerMaskDefaultValue>true</d5p1:LayerMaskDefaultValue>
@@ -52,7 +52,12 @@
             <d6p1:X>0</d6p1:X>
             <d6p1:Y>0</d6p1:Y>
           </d5p1:Viewport>
-          <d5p1:AspectRatio>1.78217816</d5p1:AspectRatio>
+          <d5p1:AspectRatio>1.82442749</d5p1:AspectRatio>
+        </d2p1:Component>
+        <d2p1:Component xmlns:d5p1="WaveEngine.Framework.Sound" i:type="d5p1:SoundListener3D">
+          <d2p1:Family>DefaultBehavior</d2p1:Family>
+          <d2p1:IsActive>true</d2p1:IsActive>
+          <d2p1:UpdateOrder>0.5</d2p1:UpdateOrder>
         </d2p1:Component>
         <d2p1:Component xmlns:d5p1="WaveEngine.Components.Cameras" i:type="d5p1:FreeCamera3DBehavior">
           <d2p1:Family>DefaultBehavior</d2p1:Family>
@@ -61,11 +66,6 @@
           <d5p1:GamepadRotationSpeed>0.75</d5p1:GamepadRotationSpeed>
           <d5p1:RotationSpeed>0.004</d5p1:RotationSpeed>
           <d5p1:Speed>20</d5p1:Speed>
-        </d2p1:Component>
-        <d2p1:Component xmlns:d5p1="WaveEngine.Framework.Sound" i:type="d5p1:SoundListener3D">
-          <d2p1:Family>DefaultBehavior</d2p1:Family>
-          <d2p1:IsActive>true</d2p1:IsActive>
-          <d2p1:UpdateOrder>0.5</d2p1:UpdateOrder>
         </d2p1:Component>
       </d2p1:SerializeComponents>
       <d2p1:Tag i:nil="true" />
@@ -78,10 +78,10 @@
       <d2p1:SerializeComponents>
         <d2p1:Component xmlns:d5p1="WaveEngine.Framework.Graphics" i:type="d5p1:Transform3D">
           <d5p1:LocalOrientation xmlns:d6p1="WaveEngine.Common.Math">
-            <d6p1:W>0.8535535</d6p1:W>
-            <d6p1:X>0.353553355</d6p1:X>
-            <d6p1:Y>0.353553355</d6p1:Y>
-            <d6p1:Z>-0.146446586</d6p1:Z>
+            <d6p1:W>0.6797593</d6p1:W>
+            <d6p1:X>-0.186608791</d6p1:X>
+            <d6p1:Y>0.5015498</d6p1:Y>
+            <d6p1:Z>0.5015498</d6p1:Z>
           </d5p1:LocalOrientation>
           <d5p1:LocalPosition xmlns:d6p1="WaveEngine.Common.Math">
             <d6p1:X>4</d6p1:X>
@@ -97,15 +97,11 @@
         <d2p1:Component xmlns:d5p1="WaveEngine.Framework.Graphics" i:type="d5p1:DirectionalLightProperties">
           <d5p1:Color xmlns:d6p1="WaveEngine.Common.Graphics">
             <d6p1:A>255</d6p1:A>
-            <d6p1:B>255</d6p1:B>
-            <d6p1:G>255</d6p1:G>
-            <d6p1:R>255</d6p1:R>
+            <d6p1:B>121</d6p1:B>
+            <d6p1:G>229</d6p1:G>
+            <d6p1:R>234</d6p1:R>
           </d5p1:Color>
-          <d5p1:Intensity>1</d5p1:Intensity>
-        </d2p1:Component>
-        <d2p1:Component xmlns:d5p1="WaveEngine.Framework.Graphics" i:type="d5p1:DirectionalLightRenderer">
-          <d2p1:IsVisible>true</d2p1:IsVisible>
-          <d5p1:FrustumCullingEnabled>true</d5p1:FrustumCullingEnabled>
+          <d5p1:Intensity>0.5</d5p1:Intensity>
         </d2p1:Component>
       </d2p1:SerializeComponents>
       <d2p1:Tag i:nil="true" />
@@ -126,7 +122,7 @@
           <d5p1:LocalPosition xmlns:d6p1="WaveEngine.Common.Math">
             <d6p1:X>640</d6p1:X>
             <d6p1:Y>360</d6p1:Y>
-            <d6p1:Z>0</d6p1:Z>
+            <d6p1:Z>-10</d6p1:Z>
           </d5p1:LocalPosition>
           <d5p1:LocalScale xmlns:d6p1="WaveEngine.Common.Math">
             <d6p1:X>1</d6p1:X>
@@ -196,48 +192,6 @@
     <d2p1:Entity>
       <d2p1:IsStatic>false</d2p1:IsStatic>
       <d2p1:IsVisible>true</d2p1:IsVisible>
-      <d2p1:Name>Sphere</d2p1:Name>
-      <d2p1:SerializeChildrens />
-      <d2p1:SerializeComponents>
-        <d2p1:Component xmlns:d5p1="WaveEngine.Framework.Graphics" i:type="d5p1:Transform3D">
-          <d5p1:LocalOrientation xmlns:d6p1="WaveEngine.Common.Math">
-            <d6p1:W>1</d6p1:W>
-            <d6p1:X>0</d6p1:X>
-            <d6p1:Y>0</d6p1:Y>
-            <d6p1:Z>0</d6p1:Z>
-          </d5p1:LocalOrientation>
-          <d5p1:LocalPosition xmlns:d6p1="WaveEngine.Common.Math">
-            <d6p1:X>2.38418579E-07</d6p1:X>
-            <d6p1:Y>0.2143862</d6p1:Y>
-            <d6p1:Z>0.0958838</d6p1:Z>
-          </d5p1:LocalPosition>
-          <d5p1:LocalScale xmlns:d6p1="WaveEngine.Common.Math">
-            <d6p1:X>1</d6p1:X>
-            <d6p1:Y>1</d6p1:Y>
-            <d6p1:Z>1</d6p1:Z>
-          </d5p1:LocalScale>
-        </d2p1:Component>
-        <d2p1:Component xmlns:d5p1="WaveEngine.Components.Graphics3D" i:type="d5p1:MaterialsMap">
-          <d5p1:DefaultMaterialPath i:nil="true" />
-          <d5p1:MaterialsPath xmlns:d6p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
-          <d5p1:UseMaterialCopy>false</d5p1:UseMaterialCopy>
-          <d5p1:useDefaultMaterial>false</d5p1:useDefaultMaterial>
-          <d5p1:useDummyMaterial>true</d5p1:useDummyMaterial>
-        </d2p1:Component>
-        <d2p1:Component xmlns:d5p1="WaveEngine.Components.Graphics3D" i:type="d5p1:Model">
-          <ModelPath i:nil="true" xmlns="WaveEngine.Framework.Graphics" />
-          <d5p1:ModelType>Sphere</d5p1:ModelType>
-        </d2p1:Component>
-        <d2p1:Component xmlns:d5p1="WaveEngine.Components.Graphics3D" i:type="d5p1:ModelRenderer">
-          <d2p1:IsVisible>true</d2p1:IsVisible>
-          <FrustumCullingEnabled xmlns="WaveEngine.Framework.Graphics">true</FrustumCullingEnabled>
-        </d2p1:Component>
-      </d2p1:SerializeComponents>
-      <d2p1:Tag i:nil="true" />
-    </d2p1:Entity>
-    <d2p1:Entity>
-      <d2p1:IsStatic>false</d2p1:IsStatic>
-      <d2p1:IsVisible>true</d2p1:IsVisible>
       <d2p1:Name>Asteroid01</d2p1:Name>
       <d2p1:SerializeChildrens />
       <d2p1:SerializeComponents>
@@ -249,9 +203,9 @@
             <d6p1:Z>0</d6p1:Z>
           </d5p1:LocalOrientation>
           <d5p1:LocalPosition xmlns:d6p1="WaveEngine.Common.Math">
-            <d6p1:X>-1.93581486</d6p1:X>
-            <d6p1:Y>1.63844788</d6p1:Y>
-            <d6p1:Z>0.57400775</d6p1:Z>
+            <d6p1:X>0</d6p1:X>
+            <d6p1:Y>0</d6p1:Y>
+            <d6p1:Z>0</d6p1:Z>
           </d5p1:LocalPosition>
           <d5p1:LocalScale xmlns:d6p1="WaveEngine.Common.Math">
             <d6p1:X>1</d6p1:X>
@@ -291,6 +245,16 @@
             <d6p1:R>255</d6p1:R>
           </d5p1:LineColor>
         </d2p1:Component>
+        <d2p1:Component xmlns:d5p1="WaveEngine.Components.Graphics3D" i:type="d5p1:Spinner">
+          <d2p1:Family>DefaultBehavior</d2p1:Family>
+          <d2p1:IsActive>true</d2p1:IsActive>
+          <d2p1:UpdateOrder>0.5</d2p1:UpdateOrder>
+          <d5p1:AxisTotalIncreases xmlns:d6p1="WaveEngine.Common.Math">
+            <d6p1:X>0.785398066</d6p1:X>
+            <d6p1:Y>0.785398066</d6p1:Y>
+            <d6p1:Z>0.785398066</d6p1:Z>
+          </d5p1:AxisTotalIncreases>
+        </d2p1:Component>
       </d2p1:SerializeComponents>
       <d2p1:Tag i:nil="true" />
     </d2p1:Entity>
@@ -308,9 +272,9 @@
             <d6p1:Z>0</d6p1:Z>
           </d5p1:LocalOrientation>
           <d5p1:LocalPosition xmlns:d6p1="WaveEngine.Common.Math">
-            <d6p1:X>-1.94772863</d6p1:X>
-            <d6p1:Y>1.733094</d6p1:Y>
-            <d6p1:Z>-1.012867</d6p1:Z>
+            <d6p1:X>1</d6p1:X>
+            <d6p1:Y>0</d6p1:Y>
+            <d6p1:Z>0</d6p1:Z>
           </d5p1:LocalPosition>
           <d5p1:LocalScale xmlns:d6p1="WaveEngine.Common.Math">
             <d6p1:X>1</d6p1:X>
@@ -335,7 +299,7 @@
           <d5p1:CurrentAnimation>default</d5p1:CurrentAnimation>
           <d5p1:PlayAutomatically>false</d5p1:PlayAutomatically>
           <d5p1:FramesPerSecond>30</d5p1:FramesPerSecond>
-          <d5p1:animationPath>Content/Assets/Models/asteroid_2_0.fbx_animation.wpk</d5p1:animationPath>
+          <d5p1:animationPath>Content/Assets/Models/asteroid_1_0.fbx_animation.wpk</d5p1:animationPath>
         </d2p1:Component>
         <d2p1:Component xmlns:d5p1="WaveEngine.Components.Graphics3D" i:type="d5p1:SkinnedModelRenderer">
           <d2p1:IsVisible>true</d2p1:IsVisible>
@@ -367,9 +331,9 @@
             <d6p1:Z>0</d6p1:Z>
           </d5p1:LocalOrientation>
           <d5p1:LocalPosition xmlns:d6p1="WaveEngine.Common.Math">
-            <d6p1:X>-2.091722</d6p1:X>
-            <d6p1:Y>2.22493458</d6p1:Y>
-            <d6p1:Z>0.306914926</d6p1:Z>
+            <d6p1:X>2</d6p1:X>
+            <d6p1:Y>0</d6p1:Y>
+            <d6p1:Z>0</d6p1:Z>
           </d5p1:LocalPosition>
           <d5p1:LocalScale xmlns:d6p1="WaveEngine.Common.Math">
             <d6p1:X>1</d6p1:X>
@@ -394,7 +358,7 @@
           <d5p1:CurrentAnimation>default</d5p1:CurrentAnimation>
           <d5p1:PlayAutomatically>false</d5p1:PlayAutomatically>
           <d5p1:FramesPerSecond>30</d5p1:FramesPerSecond>
-          <d5p1:animationPath>Content/Assets/Models/asteroid_3_0.fbx_animation.wpk</d5p1:animationPath>
+          <d5p1:animationPath>Content/Assets/Models/asteroid_1_0.fbx_animation.wpk</d5p1:animationPath>
         </d2p1:Component>
         <d2p1:Component xmlns:d5p1="WaveEngine.Components.Graphics3D" i:type="d5p1:SkinnedModelRenderer">
           <d2p1:IsVisible>true</d2p1:IsVisible>
@@ -426,9 +390,9 @@
             <d6p1:Z>0</d6p1:Z>
           </d5p1:LocalOrientation>
           <d5p1:LocalPosition xmlns:d6p1="WaveEngine.Common.Math">
-            <d6p1:X>-0.5122652</d6p1:X>
-            <d6p1:Y>1.6399889</d6p1:Y>
-            <d6p1:Z>-0.6084195</d6p1:Z>
+            <d6p1:X>3</d6p1:X>
+            <d6p1:Y>0</d6p1:Y>
+            <d6p1:Z>0</d6p1:Z>
           </d5p1:LocalPosition>
           <d5p1:LocalScale xmlns:d6p1="WaveEngine.Common.Math">
             <d6p1:X>1</d6p1:X>
@@ -453,7 +417,7 @@
           <d5p1:CurrentAnimation>default</d5p1:CurrentAnimation>
           <d5p1:PlayAutomatically>false</d5p1:PlayAutomatically>
           <d5p1:FramesPerSecond>30</d5p1:FramesPerSecond>
-          <d5p1:animationPath>Content/Assets/Models/asteroid_4_0.fbx_animation.wpk</d5p1:animationPath>
+          <d5p1:animationPath>Content/Assets/Models/asteroid_1_0.fbx_animation.wpk</d5p1:animationPath>
         </d2p1:Component>
         <d2p1:Component xmlns:d5p1="WaveEngine.Components.Graphics3D" i:type="d5p1:SkinnedModelRenderer">
           <d2p1:IsVisible>true</d2p1:IsVisible>
@@ -474,7 +438,7 @@
     <d2p1:Entity>
       <d2p1:IsStatic>false</d2p1:IsStatic>
       <d2p1:IsVisible>true</d2p1:IsVisible>
-      <d2p1:Name>Ship</d2p1:Name>
+      <d2p1:Name>Player</d2p1:Name>
       <d2p1:SerializeChildrens />
       <d2p1:SerializeComponents>
         <d2p1:Component xmlns:d5p1="WaveEngine.Framework.Graphics" i:type="d5p1:Transform3D">
@@ -485,19 +449,28 @@
             <d6p1:Z>0</d6p1:Z>
           </d5p1:LocalOrientation>
           <d5p1:LocalPosition xmlns:d6p1="WaveEngine.Common.Math">
-            <d6p1:X>-10.8627834</d6p1:X>
-            <d6p1:Y>2.62913465</d6p1:Y>
-            <d6p1:Z>-0.702044845</d6p1:Z>
+            <d6p1:X>0.455212831</d6p1:X>
+            <d6p1:Y>0.8627947</d6p1:Y>
+            <d6p1:Z>4.107983</d6p1:Z>
           </d5p1:LocalPosition>
           <d5p1:LocalScale xmlns:d6p1="WaveEngine.Common.Math">
-            <d6p1:X>1</d6p1:X>
-            <d6p1:Y>1</d6p1:Y>
-            <d6p1:Z>1</d6p1:Z>
+            <d6p1:X>0.2</d6p1:X>
+            <d6p1:Y>0.2</d6p1:Y>
+            <d6p1:Z>0.2</d6p1:Z>
           </d5p1:LocalScale>
         </d2p1:Component>
         <d2p1:Component xmlns:d5p1="WaveEngine.Components.Graphics3D" i:type="d5p1:MaterialsMap">
           <d5p1:DefaultMaterialPath>Content/Assets/Materials/ShipMat.wmat</d5p1:DefaultMaterialPath>
-          <d5p1:MaterialsPath xmlns:d6p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+          <d5p1:MaterialsPath xmlns:d6p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+            <d6p1:KeyValueOfstringstring>
+              <d6p1:Key>ship</d6p1:Key>
+              <d6p1:Value>Content/Assets/Materials/ShipMat.wmat</d6p1:Value>
+            </d6p1:KeyValueOfstringstring>
+            <d6p1:KeyValueOfstringstring>
+              <d6p1:Key>glass</d6p1:Key>
+              <d6p1:Value>Content/Assets/Materials/EnvironmentMat.wmat</d6p1:Value>
+            </d6p1:KeyValueOfstringstring>
+          </d5p1:MaterialsPath>
           <d5p1:UseMaterialCopy>false</d5p1:UseMaterialCopy>
           <d5p1:useDefaultMaterial>false</d5p1:useDefaultMaterial>
           <d5p1:useDummyMaterial>false</d5p1:useDummyMaterial>
@@ -519,11 +492,11 @@
       <d3p1:KeyValueOfstringanyType>
         <d3p1:Key>VirtualScreen</d3p1:Key>
         <d3p1:Value xmlns:d5p1="WaveEngine.Framework.Managers" i:type="d5p1:VirtualScreenManager">
-          <d5p1:Enabled>true</d5p1:Enabled>
+          <d5p1:Enabled>false</d5p1:Enabled>
           <d5p1:Expand>true</d5p1:Expand>
           <d5p1:Stretch>Uniform</d5p1:Stretch>
-          <d5p1:VirtualHeight>720</d5p1:VirtualHeight>
-          <d5p1:VirtualWidth>1280</d5p1:VirtualWidth>
+          <d5p1:VirtualHeight>393</d5p1:VirtualHeight>
+          <d5p1:VirtualWidth>717</d5p1:VirtualWidth>
         </d3p1:Value>
       </d3p1:KeyValueOfstringanyType>
       <d3p1:KeyValueOfstringanyType>
