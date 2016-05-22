@@ -7,6 +7,7 @@ using WaveEngine.Components.Graphics3D;
 using WaveEngine.Framework;
 using WaveEngine.Framework.Graphics;
 using WaveEngine.Framework.Physics3D;
+using WaveEngine.Framework.Services;
 
 namespace WaveTest
 {
@@ -116,8 +117,15 @@ namespace WaveTest
             asteroid.IsVisible = true;
 
             var shipTransform = this.shipEntity.FindComponent<Transform3D>();
-            var shipPosition = shipTransform.Position + (shipTransform.WorldTransform.Forward * this.AsteroidDistance);
-            shipPosition.X += WaveServices
+            var spawnPosition = shipTransform.Position + (shipTransform.WorldTransform.Forward * this.AsteroidDistance);
+            var spinner = asteroid.FindComponent<Spinner>();
+
+            spawnPosition.X += WaveServices.Random.Next((int)-this.AsteroidSpread, (int)this.AsteroidSpread);
+            spawnPosition.Y += WaveServices.Random.Next((int)-this.AsteroidSpread, (int)this.AsteroidSpread);
+
+            spinner.IncreaseX = WaveServices.Random.Next(-100, 100);
+            spinner.IncreaseY = WaveServices.Random.Next(-100, 100);
+            spinner.IncreaseZ = WaveServices.Random.Next(-100, 100);
 
             this.asteroidIndex = (this.asteroidIndex + 1) % this.NumberOfAsteroids;
         }

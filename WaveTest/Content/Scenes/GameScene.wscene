@@ -406,14 +406,14 @@
           <d2p1:SerializeComponents>
             <d2p1:Component xmlns:d7p1="WaveEngine.Framework.Graphics" i:type="d7p1:Transform3D">
               <d7p1:LocalOrientation xmlns:d8p1="WaveEngine.Common.Math">
-                <d8p1:W>0.976296</d8p1:W>
-                <d8p1:X>-0.21643959</d8p1:X>
+                <d8p1:W>0.996783435</d8p1:W>
+                <d8p1:X>-0.08014128</d8p1:X>
                 <d8p1:Y>0</d8p1:Y>
                 <d8p1:Z>0</d8p1:Z>
               </d7p1:LocalOrientation>
               <d7p1:LocalPosition xmlns:d8p1="WaveEngine.Common.Math">
                 <d8p1:X>0</d8p1:X>
-                <d8p1:Y>2.5</d8p1:Y>
+                <d8p1:Y>1.45537758</d8p1:Y>
                 <d8p1:Z>4.5</d8p1:Z>
               </d7p1:LocalPosition>
               <d7p1:LocalScale xmlns:d8p1="WaveEngine.Common.Math">
@@ -495,6 +495,43 @@
           <d2p1:IsActive>true</d2p1:IsActive>
           <d2p1:UpdateOrder>0.5</d2p1:UpdateOrder>
           <d5p1:EntityPath>Player</d5p1:EntityPath>
+        </d2p1:Component>
+      </d2p1:SerializeComponents>
+      <d2p1:Tag i:nil="true" />
+    </d2p1:Entity>
+    <d2p1:Entity>
+      <d2p1:IsStatic>false</d2p1:IsStatic>
+      <d2p1:IsVisible>true</d2p1:IsVisible>
+      <d2p1:Name>AsteroidManager</d2p1:Name>
+      <d2p1:SerializeChildrens />
+      <d2p1:SerializeComponents>
+        <d2p1:Component xmlns:d5p1="WaveEngine.Framework.Graphics" i:type="d5p1:Transform3D">
+          <d5p1:LocalOrientation xmlns:d6p1="WaveEngine.Common.Math">
+            <d6p1:W>1</d6p1:W>
+            <d6p1:X>0</d6p1:X>
+            <d6p1:Y>0</d6p1:Y>
+            <d6p1:Z>0</d6p1:Z>
+          </d5p1:LocalOrientation>
+          <d5p1:LocalPosition xmlns:d6p1="WaveEngine.Common.Math">
+            <d6p1:X>0.343584418</d6p1:X>
+            <d6p1:Y>1.88109541</d6p1:Y>
+            <d6p1:Z>4.0532074</d6p1:Z>
+          </d5p1:LocalPosition>
+          <d5p1:LocalScale xmlns:d6p1="WaveEngine.Common.Math">
+            <d6p1:X>1</d6p1:X>
+            <d6p1:Y>1</d6p1:Y>
+            <d6p1:Z>1</d6p1:Z>
+          </d5p1:LocalScale>
+        </d2p1:Component>
+        <d2p1:Component xmlns:d5p1="http://schemas.datacontract.org/2004/07/WaveTest" i:type="d5p1:AsteroidManager">
+          <d2p1:Family>DefaultBehavior</d2p1:Family>
+          <d2p1:IsActive>true</d2p1:IsActive>
+          <d2p1:UpdateOrder>0.5</d2p1:UpdateOrder>
+          <d5p1:AsteroidDistance>1000</d5p1:AsteroidDistance>
+          <d5p1:AsteroidInterval>0.05</d5p1:AsteroidInterval>
+          <d5p1:AsteroidSpread>50</d5p1:AsteroidSpread>
+          <d5p1:NumberOfAsteroids>150</d5p1:NumberOfAsteroids>
+          <d5p1:ShipPath>Player</d5p1:ShipPath>
         </d2p1:Component>
       </d2p1:SerializeComponents>
       <d2p1:Tag i:nil="true" />
