@@ -47,12 +47,12 @@ namespace WaveTest
 
             if (input.A == WaveEngine.Common.Input.ButtonState.Pressed)
             {
-                rotation.X -= (float)gameTime.TotalSeconds;
+                rotation.X += (float)gameTime.TotalSeconds;
             }
 
             if (input.D == WaveEngine.Common.Input.ButtonState.Pressed)
             {
-                rotation.X += (float)gameTime.TotalSeconds;
+                rotation.X -= (float)gameTime.TotalSeconds;
             }
 
             this._transform.LocalOrientation *= Quaternion.CreateFromYawPitchRoll(rotation.X, rotation.Y, rotation.Z);

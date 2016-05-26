@@ -513,9 +513,9 @@
             <d6p1:Z>0</d6p1:Z>
           </d5p1:LocalOrientation>
           <d5p1:LocalPosition xmlns:d6p1="WaveEngine.Common.Math">
-            <d6p1:X>0.343584418</d6p1:X>
-            <d6p1:Y>1.88109541</d6p1:Y>
-            <d6p1:Z>4.0532074</d6p1:Z>
+            <d6p1:X>0</d6p1:X>
+            <d6p1:Y>0</d6p1:Y>
+            <d6p1:Z>0</d6p1:Z>
           </d5p1:LocalPosition>
           <d5p1:LocalScale xmlns:d6p1="WaveEngine.Common.Math">
             <d6p1:X>1</d6p1:X>
@@ -530,7 +530,7 @@
           <d5p1:AsteroidDistance>1000</d5p1:AsteroidDistance>
           <d5p1:AsteroidInterval>0.05</d5p1:AsteroidInterval>
           <d5p1:AsteroidSpread>50</d5p1:AsteroidSpread>
-          <d5p1:NumberOfAsteroids>150</d5p1:NumberOfAsteroids>
+          <d5p1:NumberOfAsteroids>200</d5p1:NumberOfAsteroids>
           <d5p1:ShipPath>Player</d5p1:ShipPath>
         </d2p1:Component>
       </d2p1:SerializeComponents>
@@ -545,7 +545,7 @@
           <d5p1:Enabled>false</d5p1:Enabled>
           <d5p1:Expand>true</d5p1:Expand>
           <d5p1:Stretch>Uniform</d5p1:Stretch>
-          <d5p1:VirtualHeight>442</d5p1:VirtualHeight>
+          <d5p1:VirtualHeight>393</d5p1:VirtualHeight>
           <d5p1:VirtualWidth>717</d5p1:VirtualWidth>
         </d3p1:Value>
       </d3p1:KeyValueOfstringanyType>
