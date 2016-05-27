@@ -53,7 +53,7 @@ namespace WaveTest
                 return;
             }
 
-            if (this.shipEntity == null && this.NumberOfAsteroids == 0)
+            if ((this.shipEntity == null) && (this.NumberOfAsteroids == 0))
             {
                 return;
             }
@@ -62,7 +62,7 @@ namespace WaveTest
 
             if (this.remainingAsteroidTime <= 0)
             {
-                this.ShowAsteroid();
+                //this.ShowAsteroid();
                 this.remainingAsteroidTime += this.AsteroidInterval;
             }
         }
