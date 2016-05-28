@@ -145,7 +145,7 @@
           </d5p1:LocalScale>
         </d2p1:Component>
         <d2p1:Component xmlns:d5p1="WaveEngine.Components.Graphics3D" i:type="d5p1:MaterialsMap">
-          <d5p1:DefaultMaterialPath i:nil="true" />
+          <d5p1:DefaultMaterialPath>Content/Assets/Materials/GlassMat.wmat</d5p1:DefaultMaterialPath>
           <d5p1:MaterialsPath xmlns:d6p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
             <d6p1:KeyValueOfstringstring>
               <d6p1:Key>stars</d6p1:Key>
@@ -371,10 +371,19 @@
         </d2p1:Component>
         <d2p1:Component xmlns:d5p1="WaveEngine.Components.Graphics3D" i:type="d5p1:MaterialsMap">
           <d5p1:DefaultMaterialPath>Content/Assets/Materials/Ship.wmat</d5p1:DefaultMaterialPath>
-          <d5p1:MaterialsPath xmlns:d6p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+          <d5p1:MaterialsPath xmlns:d6p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+            <d6p1:KeyValueOfstringstring>
+              <d6p1:Key>ship</d6p1:Key>
+              <d6p1:Value>Content/Assets/Materials/Ship.wmat</d6p1:Value>
+            </d6p1:KeyValueOfstringstring>
+            <d6p1:KeyValueOfstringstring>
+              <d6p1:Key>glass</d6p1:Key>
+              <d6p1:Value>Content/Assets/Materials/GlassMat.wmat</d6p1:Value>
+            </d6p1:KeyValueOfstringstring>
+          </d5p1:MaterialsPath>
           <d5p1:UseMaterialCopy>false</d5p1:UseMaterialCopy>
           <d5p1:useDefaultMaterial>false</d5p1:useDefaultMaterial>
-          <d5p1:useDummyMaterial>false</d5p1:useDummyMaterial>
+          <d5p1:useDummyMaterial>true</d5p1:useDummyMaterial>
         </d2p1:Component>
         <d2p1:Component xmlns:d5p1="WaveEngine.Components.Graphics3D" i:type="d5p1:Model">
           <ModelPath xmlns="WaveEngine.Framework.Graphics">Content/Assets/Models/ship.fbx.wpk</ModelPath>
@@ -417,7 +426,7 @@
             <d6p1:X>0</d6p1:X>
             <d6p1:Y>0</d6p1:Y>
           </d5p1:Viewport>
-          <d5p1:AspectRatio>1.78217816</d5p1:AspectRatio>
+          <d5p1:AspectRatio>1.622172</d5p1:AspectRatio>
         </d2p1:Component>
       </d2p1:SerializeComponents>
       <d2p1:Tag i:nil="true" />
