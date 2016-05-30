@@ -185,6 +185,14 @@
             <d6p1:R>255</d6p1:R>
           </d5p1:LineColor>
         </d2p1:Component>
+        <d2p1:Component xmlns:d5p1="http://schemas.datacontract.org/2004/07/WaveTest" i:type="d5p1:FollowBehaviour">
+          <d2p1:Family>DefaultBehavior</d2p1:Family>
+          <d2p1:IsActive>true</d2p1:IsActive>
+          <d2p1:UpdateOrder>0.5</d2p1:UpdateOrder>
+          <d5p1:EntityPath>cameraHolder.defaultCamera3D</d5p1:EntityPath>
+          <d5p1:RotatingFollow>false</d5p1:RotatingFollow>
+          <d5p1:SmoothFollow>false</d5p1:SmoothFollow>
+        </d2p1:Component>
       </d2p1:SerializeComponents>
       <d2p1:Tag i:nil="true" />
     </d2p1:Entity>
@@ -533,6 +541,8 @@
           <d2p1:IsActive>true</d2p1:IsActive>
           <d2p1:UpdateOrder>0.5</d2p1:UpdateOrder>
           <d5p1:EntityPath>Player</d5p1:EntityPath>
+          <d5p1:RotatingFollow>true</d5p1:RotatingFollow>
+          <d5p1:SmoothFollow>true</d5p1:SmoothFollow>
         </d2p1:Component>
       </d2p1:SerializeComponents>
       <d2p1:Tag i:nil="true" />

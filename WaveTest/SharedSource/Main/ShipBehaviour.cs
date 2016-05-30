@@ -7,11 +7,9 @@ using WaveEngine.Framework.Graphics;
 using WaveEngine.Framework.Services;
 using WaveEngine.Common.Math;
 
-namespace WaveTest
-{
+namespace WaveTest {
     [DataContract]
-    public class ShipBehaviour:Behavior
-    {
+    public class ShipBehaviour : Behavior {
         [RequiredComponent]
         public Transform3D _transform;
 
@@ -20,17 +18,12 @@ namespace WaveTest
 
         private float currentSpeed;
 
-        // Similar to Awake()
-        protected override void Initialize()
-        {
+        protected override void Initialize() {
             base.Initialize();
-
             this.currentSpeed = this.Speed;
         }
 
-        // Similar to Update()
-        protected override void Update(TimeSpan gameTime)
-        {
+        protected override void Update(TimeSpan gameTime) {
             var rotation = Vector3.Zero;
             var input = WaveServices.Input.KeyboardState;
             var localPosition = this._transform.LocalPosition;

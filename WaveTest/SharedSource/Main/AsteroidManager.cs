@@ -9,11 +9,9 @@ using WaveEngine.Framework.Graphics;
 using WaveEngine.Framework.Physics3D;
 using WaveEngine.Framework.Services;
 
-namespace WaveTest
-{
+namespace WaveTest {
     [DataContract]
-    class AsteroidManager : Behavior
-    {
+    class AsteroidManager : Behavior {
         [DataMember]
         public int NumberOfAsteroids { get; set; }
 
@@ -36,42 +34,38 @@ namespace WaveTest
         private float remainingAsteroidTime;
         private Entity shipEntity;
 
-        protected override void Initialize()
-        {
+        protected override void Initialize() {
             base.Initialize();
 
-            if (string.IsNullOrEmpty(this.ShipPath))
+            if (string.IsNullOrEmpty(this.ShipPath)) {
                 this.shipEntity = this.EntityManager.Find(this.ShipPath);
+            }
         }
 
         protected override void Update(TimeSpan gameTime)
         {
-            if (!this.isSpawned)
-            {
+            if (!this.isSpawned) {
                 this.CreateAsteroid();
                 this.isSpawned = true;
                 return;
             }
 
-            if ((this.shipEntity == null) && (this.NumberOfAsteroids == 0))
-            {
+            if ((this.shipEntity == null) && (this.NumberOfAsteroids == 0)) {
                 return;
             }
-
-            this.remainingAsteroidTime -= (float)gameTime.TotalSeconds;
 
             if (this.remainingAsteroidTime <= 0)
             {
                 //this.ShowAsteroid();
                 this.remainingAsteroidTime += this.AsteroidInterval;
             }
+             
+            this.remainingAsteroidTime -= (float)gameTime.TotalSeconds;
         }
 
-        private void CreateAsteroid()
-        {
+        private void CreateAsteroid() {
             this.asteroids = new List<Entity>();
-            for(int i = 0; i < this.NumberOfAsteroids; i++)
-            {
+            for(int i = 0; i < this.NumberOfAsteroids; i++) {
                 var asteroid = this.CreateAsteroid(i);
                 this.asteroids.Add(asteroid);
                 this.EntityManager.Add(asteroid);
@@ -79,12 +73,10 @@ namespace WaveTest
             this.asteroidIndex = 0;
         }
 
-        private Entity CreateAsteroid(int i)
-        {
+        private Entity CreateAsteroid(int i) {
             string model;
 
-            switch (i % this.NumberOfAsteroids)
-            {
+            switch (i % this.NumberOfAsteroids) {
                 case 0:
                     model = WaveContent.Assets.Models.asteroid_1_0_fbx;
                     break;
@@ -111,8 +103,7 @@ namespace WaveTest
             return asteroid;
         }
 
-        private void ShowAsteroid()
-        {
+        private void ShowAsteroid() {
             var asteroid = this.asteroids[this.asteroidIndex];
             asteroid.IsVisible = true;
 

@@ -12,12 +12,9 @@ using WaveEngine.Framework.Resources;
 using WaveEngine.Framework.Services;
 #endregion
 
-namespace WaveTest
-{
-    public class MyScene : Scene
-    {
-        protected override void CreateScene()
-        {
+namespace WaveTest {
+    public class MyScene : Scene {
+        protected override void CreateScene() {
             this.Load(WaveContent.Scenes.MyScene);           
         }
     }

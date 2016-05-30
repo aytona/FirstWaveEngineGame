@@ -6,12 +6,9 @@ using WaveEngine.Framework;
 using WaveEngine.Framework.Services;
 #endregion
 
-namespace WaveTest
-{
-    public class Game : WaveEngine.Framework.Game
-    {
-        public override void Initialize(IApplication application)
-        {
+namespace WaveTest {
+    public class Game : WaveEngine.Framework.Game {
+        public override void Initialize(IApplication application) {
             base.Initialize(application);
 
 			ScreenContext screenContext = new ScreenContext(new MyScene());	
