@@ -52,5 +52,17 @@ namespace WaveTest {
             localPosition.Z -= (float)(this.currentSpeed * gameTime.TotalSeconds);
             this._transform.LocalPosition = localPosition;
         }
+
+        public void Reset() {
+            this.Owner.IsVisible = true;
+            this._transform.Position = Vector3.Zero;
+            this._transform.Rotation = Vector3.Zero;
+            this.currentSpeed = this.Speed;
+        }
+
+        public void GameOver() {
+            this.Owner.IsVisible = false;
+            this.currentSpeed = 0;
+        }
     }
 }

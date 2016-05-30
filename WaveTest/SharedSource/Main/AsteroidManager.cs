@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Runtime.Serialization;
 using System.Text;
 using WaveEngine.Common.Attributes;
+using WaveEngine.Common.Math;
 using WaveEngine.Components.Graphics3D;
 using WaveEngine.Framework;
 using WaveEngine.Framework.Graphics;
@@ -29,9 +30,11 @@ namespace WaveTest {
         public float AsteroidSpread { get; set; }
 
         private bool isSpawned;
+        private bool isGameOver;
         private List<Entity> asteroids;
         private int asteroidIndex;
         private float remainingAsteroidTime;
+        private float remainingGameOverTime;
         private Entity shipEntity;
 
         protected override void Initialize() {
@@ -54,13 +57,31 @@ namespace WaveTest {
                 return;
             }
 
-            if (this.remainingAsteroidTime <= 0)
-            {
-                //this.ShowAsteroid();
-                this.remainingAsteroidTime += this.AsteroidInterval;
+            if (this.isGameOver) {
+                this.remainingGameOverTime -= (float)gameTime.TotalSeconds;
+                if (this.remainingGameOverTime <= 0) {
+                    this.Reset();
+                }
             }
-             
-            this.remainingAsteroidTime -= (float)gameTime.TotalSeconds;
+
+            else {
+                var shipCollider = this.shipEntity.FindComponent<SphereCollider3D>().BoundingSphere;
+                foreach (var asteroid in this.asteroids)
+                {
+                    var asteroidCollider = asteroid.FindComponent<SphereCollider3D>();
+                    if (asteroidCollider.Intersects(ref shipCollider))
+                    {
+                        this.GameOver();
+                    }
+                }
+                this.remainingAsteroidTime -= (float)gameTime.TotalSeconds;
+                if (this.remainingAsteroidTime <= 0) {
+                    this.ShowAsteroid();
+                    this.remainingAsteroidTime += this.AsteroidInterval;
+                }
+            }
+
+            
         }
 
         private void CreateAsteroid() {
@@ -97,7 +118,8 @@ namespace WaveTest {
                 .AddComponent(new MaterialsMap() { DefaultMaterialPath = WaveContent.Assets.Materials.AsteroidMat })
                 .AddComponent(new Spinner())
                 .AddComponent(new SphereCollider3D())
-                .AddComponent(new ModelRenderer());
+                .AddComponent(new ModelRenderer())
+                .AddComponent(new SpawnBehaviour());
 
             asteroid.IsVisible = false;
             return asteroid;
@@ -108,17 +130,37 @@ namespace WaveTest {
             asteroid.IsVisible = true;
 
             var shipTransform = this.shipEntity.FindComponent<Transform3D>();
-            var spawnPosition = shipTransform.Position + (shipTransform.WorldTransform.Forward * this.AsteroidDistance);
-            var spinner = asteroid.FindComponent<Spinner>();
 
+            var spawnPosition = shipTransform.Position + (shipTransform.WorldTransform.Forward * this.AsteroidDistance);
             spawnPosition.X += WaveServices.Random.Next((int)-this.AsteroidSpread, (int)this.AsteroidSpread);
             spawnPosition.Y += WaveServices.Random.Next((int)-this.AsteroidSpread, (int)this.AsteroidSpread);
 
+            var transform = asteroid.FindComponent<Transform3D>();
+            transform.Position = spawnPosition;
+            transform.Scale = new Vector3(WaveServices.Random.Next(3, 0));
+
+            var spinner = asteroid.FindComponent<Spinner>();
             spinner.IncreaseX = WaveServices.Random.Next(-100, 100);
             spinner.IncreaseY = WaveServices.Random.Next(-100, 100);
             spinner.IncreaseZ = WaveServices.Random.Next(-100, 100);
 
+            asteroid.FindComponent<SpawnBehaviour>().Spawn();
+
             this.asteroidIndex = (this.asteroidIndex + 1) % this.NumberOfAsteroids;
+        }
+
+        private void GameOver() {
+            this.isGameOver = true;
+            this.shipEntity.FindComponent<ShipBehaviour>().GameOver();
+            this.remainingGameOverTime = 3f;
+        }
+
+        private void Reset() {
+            foreach (var asteroid in this.asteroids) {
+                asteroid.IsVisible = false;
+            }
+            this.shipEntity.FindComponent<ShipBehaviour>().Reset();
+            this.isGameOver = false;
         }
     }
 }
