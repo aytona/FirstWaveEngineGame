@@ -10,6 +10,7 @@ using WaveEngine.Framework;
 using WaveEngine.Framework.Graphics;
 using WaveEngine.Framework.Physics3D;
 using WaveEngine.Framework.Services;
+using WaveEngine.Framework.Sound;
 
 namespace WaveTest {
     [DataContract]
@@ -164,6 +165,7 @@ namespace WaveTest {
             this.shipEntity.FindComponent<ShipBehaviour>().GameOver();
             this.explosionEntity.FindComponent<Transform3D>().Position = this.shipEntity.FindComponent<Transform3D>().Position;
             this.explosionEntity.FindComponent<ParticleSystem3D>().Emit = true;
+            this.explosionEntity.FindChild("ExplosionSound").FindComponent<SoundEmitter3D>().Play();
             this.remainingGameOverTime = 3f;
         }
 

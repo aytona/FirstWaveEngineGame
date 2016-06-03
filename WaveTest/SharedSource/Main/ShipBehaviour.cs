@@ -6,6 +6,7 @@ using WaveEngine.Framework;
 using WaveEngine.Framework.Graphics;
 using WaveEngine.Framework.Services;
 using WaveEngine.Common.Math;
+using WaveEngine.Framework.Sound;
 
 namespace WaveTest {
     [DataContract]
@@ -58,11 +59,16 @@ namespace WaveTest {
             this._transform.Position = Vector3.Zero;
             this._transform.Rotation = Vector3.Zero;
             this.currentSpeed = this.Speed;
+
+            this.Owner.FindChild("EngineSound").FindComponent<SoundEmitter3D>().Volume = 1;
         }
 
         public void GameOver() {
             this.Owner.IsVisible = false;
             this.currentSpeed = 0;
+
+
+            this.Owner.FindChild("EngineSound").FindComponent<SoundEmitter3D>().Volume = 0;
         }
     }
 }
