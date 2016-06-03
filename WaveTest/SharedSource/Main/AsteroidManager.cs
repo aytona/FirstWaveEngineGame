@@ -5,6 +5,7 @@ using System.Text;
 using WaveEngine.Common.Attributes;
 using WaveEngine.Common.Math;
 using WaveEngine.Components.Graphics3D;
+using WaveEngine.Components.Particles;
 using WaveEngine.Framework;
 using WaveEngine.Framework.Graphics;
 using WaveEngine.Framework.Physics3D;
@@ -24,6 +25,10 @@ namespace WaveTest {
         public string ShipPath { get; set; }
 
         [DataMember]
+        [RenderPropertyAsEntity]
+        public string ExplosionPath { get; set; }
+
+        [DataMember]
         public float AsteroidDistance { get; set; }
 
         [DataMember]
@@ -36,12 +41,17 @@ namespace WaveTest {
         private float remainingAsteroidTime;
         private float remainingGameOverTime;
         private Entity shipEntity;
+        private Entity explosionEntity;
 
         protected override void Initialize() {
             base.Initialize();
 
-            if (string.IsNullOrEmpty(this.ShipPath)) {
+            if (!string.IsNullOrEmpty(this.ShipPath)) {
                 this.shipEntity = this.EntityManager.Find(this.ShipPath);
+            }
+
+            if (!string.IsNullOrEmpty(this.ExplosionPath)) {
+                this.explosionEntity = this.EntityManager.Find(this.ExplosionPath);
             }
         }
 
@@ -152,6 +162,8 @@ namespace WaveTest {
         private void GameOver() {
             this.isGameOver = true;
             this.shipEntity.FindComponent<ShipBehaviour>().GameOver();
+            this.explosionEntity.FindComponent<Transform3D>().Position = this.shipEntity.FindComponent<Transform3D>().Position;
+            this.explosionEntity.FindComponent<ParticleSystem3D>().Emit = true;
             this.remainingGameOverTime = 3f;
         }
 
@@ -160,6 +172,7 @@ namespace WaveTest {
                 asteroid.IsVisible = false;
             }
             this.shipEntity.FindComponent<ShipBehaviour>().Reset();
+            this.explosionEntity.FindComponent<ParticleSystem3D>().Emit = false;
             this.isGameOver = false;
         }
     }

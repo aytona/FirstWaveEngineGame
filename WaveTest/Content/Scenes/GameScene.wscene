@@ -335,6 +335,7 @@
           <d5p1:AsteroidDistance>1000</d5p1:AsteroidDistance>
           <d5p1:AsteroidInterval>0.1</d5p1:AsteroidInterval>
           <d5p1:AsteroidSpread>50</d5p1:AsteroidSpread>
+          <d5p1:ExplosionPath>Explosion</d5p1:ExplosionPath>
           <d5p1:NumberOfAsteroids>500</d5p1:NumberOfAsteroids>
           <d5p1:ShipPath>Ship</d5p1:ShipPath>
         </d2p1:Component>
@@ -698,7 +699,7 @@
         <d2p1:Component xmlns:d5p1="WaveEngine.Components.Graphics3D" i:type="d5p1:MaterialsMap">
           <d5p1:DefaultMaterialPath>Content/Assets/Materials/FireMat.wmat</d5p1:DefaultMaterialPath>
           <d5p1:MaterialsPath xmlns:d6p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
-          <d5p1:UseMaterialCopy>false</d5p1:UseMaterialCopy>
+          <d5p1:UseMaterialCopy>true</d5p1:UseMaterialCopy>
           <d5p1:useDefaultMaterial>false</d5p1:useDefaultMaterial>
           <d5p1:useDummyMaterial>false</d5p1:useDummyMaterial>
         </d2p1:Component>
@@ -784,7 +785,7 @@
           <d5p1:Enabled>false</d5p1:Enabled>
           <d5p1:Expand>true</d5p1:Expand>
           <d5p1:Stretch>Uniform</d5p1:Stretch>
-          <d5p1:VirtualHeight>442</d5p1:VirtualHeight>
+          <d5p1:VirtualHeight>393</d5p1:VirtualHeight>
           <d5p1:VirtualWidth>717</d5p1:VirtualWidth>
         </d3p1:Value>
       </d3p1:KeyValueOfstringanyType>
