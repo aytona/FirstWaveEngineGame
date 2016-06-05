@@ -22,11 +22,11 @@ namespace WaveTest {
         public float AsteroidInterval { get; set; }
 
         [DataMember]
-        [RenderPropertyAsEntity]
+        [RenderPropertyAsEntity(new string[] {"WaveEngine.Framework.Physics3D.SphereCollider3D"})]
         public string ShipPath { get; set; }
 
         [DataMember]
-        [RenderPropertyAsEntity]
+        [RenderPropertyAsEntity(new string[] {"WaveEngine.Components.Particles.ParticleSystem3D"})]
         public string ExplosionPath { get; set; }
 
         [DataMember]
@@ -35,17 +35,22 @@ namespace WaveTest {
         [DataMember]
         public float AsteroidSpread { get; set; }
 
-        private bool isSpawned;
+        private bool isSpawned = false;
+        private int asteroidIndex = 0;
+        private const float GameOverTime = 3;
+        private const float appearDistance = 1000;
+
         private bool isGameOver;
-        private List<Entity> asteroids;
-        private int asteroidIndex;
         private float remainingAsteroidTime;
         private float remainingGameOverTime;
+        private List<Entity> asteroids;
         private Entity shipEntity;
         private Entity explosionEntity;
 
         protected override void Initialize() {
             base.Initialize();
+
+            this.remainingAsteroidTime = this.AsteroidInterval;
 
             if (!string.IsNullOrEmpty(this.ShipPath)) {
                 this.shipEntity = this.EntityManager.Find(this.ShipPath);
@@ -86,14 +91,14 @@ namespace WaveTest {
                     }
                 }
                 this.remainingAsteroidTime -= (float)gameTime.TotalSeconds;
-                if (this.remainingAsteroidTime <= 0) {
+                if (this.remainingAsteroidTime < 0) {
                     this.ShowAsteroid();
                     this.remainingAsteroidTime += this.AsteroidInterval;
                 }
-            }
-
-            
+            }   
         }
+
+        public AsteroidManager() { }
 
         private void CreateAsteroid() {
             this.asteroids = new List<Entity>();
@@ -148,7 +153,7 @@ namespace WaveTest {
 
             var transform = asteroid.FindComponent<Transform3D>();
             transform.Position = spawnPosition;
-            transform.Scale = new Vector3(WaveServices.Random.Next(3, 0));
+            transform.Scale = new Vector3(WaveServices.Random.Next(30, 80));
 
             var spinner = asteroid.FindComponent<Spinner>();
             spinner.IncreaseX = WaveServices.Random.Next(-100, 100);
